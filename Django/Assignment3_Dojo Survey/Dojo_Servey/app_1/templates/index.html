@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    
+  </head>
+  <body>
+
+    <form action="/show" method="POST">
+      {% csrf_token %}
+      <div class="contanier">
+      <div class="fname">
+        <label for="">Your Name*:</label>
+        <input class="textName" type="text" name="name" required/>
+      </div>
+
+      <div class="location">
+        <label for="">Dojo Location</label>
+        <select name="location">
+          <option value="salfit">salfit</option>
+          <option value="ramalleh">ramalleh</option>
+          <option value="nablus">nablus</option>
+        </select>
+      </div>
+
+      <div class="language">
+        <label for="">Favorite Language:</label>
+        <select name="language" id="">
+          <option value="c">c</option>
+          <option value="c++">c++</option>
+          <option value="python">python</option>
+        </select>
+      </div>
+
+      <div class="text">
+        <p>Comments(optional)</p>
+        <input class="textInput" type="text" name="Comments" />
+      </div>
+
+      <div class="button">
+        <button>Button</button>
+      
+      </div>
+    </div>
+  </form>
+  </body>
+</html>

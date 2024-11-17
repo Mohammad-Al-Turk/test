@@ -1,0 +1,78 @@
+.contanier{
+    background-color:  rgb(191, 202, 202);
+    width: 40%;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fname{
+    display: flex;
+    justify-content: space-around;    
+
+}
+
+.textName{
+    width: 33%;
+    height: 100%;
+}
+
+select{
+    width: 35%;
+    height: 120%;
+}
+
+.location{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.language{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 10px;
+
+}
+
+
+.text{
+    height: 30%;
+    width: 80%;
+    margin-left:  40px;
+    
+}
+
+
+.textInput{
+    height: 100%;
+    width: 90%;
+
+    }
+
+
+
+
+
+.button{
+    text-align: end;
+    margin-right: 20px;
+    height: 8%;
+    display: block;
+
+
+}
+
+button{
+    background-color: rgb(83, 150, 208);
+    color: white;
+    width: 25%;
+    height: 80%;
+    box-shadow: 3px 3px 3px black ;
+    margin-top: 20px;
+
+
+}

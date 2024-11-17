@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </link>
+  <title>edit_show</title>
+</head>
+
+<body class="bg-white p-4 rounded shadow-md mb-4">
+  <form action="/confirmupdate" method="post">
+    {% csrf_token %}
+    <div class="mb-4">
+      <label class="block text-gray-700"  for="Title">Title</label>
+      <input class="w-full p-2 border border-gray-300 rounded"  type="text" name="title" value="{{show.title}}" id="Title">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700" for="Network">Network</label>
+      <input class="w-full p-2 border border-gray-300 rounded" id="Network"  type="text" name="network" value="{{show.network}}">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700" for="Released_Date">Released Date</label>
+      <input class="w-full p-2 border border-gray-300 rounded" id="Released_Date"  type="date" name="released_date">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700" for="Description">Description:</label>
+      <textarea class="w-full p-2 border border-gray-300 rounded" id="Description" name="description" id="">{{show.description}}</textarea>
+    </div>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit">update</button>
+    <input type="hidden" value="{{show.id}}" name="id">
+  </form>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+
+</html>

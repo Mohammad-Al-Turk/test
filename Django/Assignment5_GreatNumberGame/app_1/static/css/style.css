@@ -1,0 +1,27 @@
+/* *{
+    margin: 0 auto;
+} */
+
+
+.container{
+    background-color: rgb(167, 178, 178);
+    width: 400px;
+    height: 400px;
+    margin: auto auto;
+    text-align: center;
+}
+
+
+.descriptionText{
+    width: 400px;
+    height: 200px;
+}
+
+
+button{
+    margin-top: 20px;
+    background-color: aquamarine;
+    width: 70px;
+    height: 40px;
+    box-shadow: 2px 2px 2px black;
+}

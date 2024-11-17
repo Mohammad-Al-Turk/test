@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+
+    <h1>name: {{author.fname}} {{author.lname}}</h1>
+    <h3>ID: {{author.id}}</h3>
+    <p>description: {{author.notes}}</p>
+
+    <h3>books:</h3>
+    <p></p>
+
+    
+    <select name="" id="">
+      'authoes':models.show_author_data()
+    {% for i in books %}
+      <option value="{{i.id}}">{{i.title}}</option>
+      {% endfor %}
+    </select>
+    <button><a href="/joinBooks">Add</a></button>
+
+
+  </body>
+</html>

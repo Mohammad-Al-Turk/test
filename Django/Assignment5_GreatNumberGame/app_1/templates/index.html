@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" /> 
+
+    
+  </head>
+  <body>
+    <div class="container">
+  <h1>welcome to the Great Number Gamez!</h1>
+  <p>I am thinking of a number between 1 and 100</p>
+  <h4>Take a guess!</h4>
+  {% if request.session.go == 0 %}
+  <form action="/guess" method="POST">
+    {% else %}
+  <form action="/playagain">
+  {% endif %}
+
+
+    {% csrf_token %}
+      <h4>for test, the random_number is: {{request.session.randomNum}}</h4>
+        <p>{{request.session.rt}}</p>
+        <input type="number" name="number" id="number"><br>
+        {% if request.session.go == 0 %}
+        <button type="submit">submit</button>
+        {% else %}
+          <button type="submit">play again</button>
+          {% endif %}
+      </div>
+      
+    </form>
+    </body>
+</html>

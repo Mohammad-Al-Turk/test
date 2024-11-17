@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="cards">
+        <form action="/dojopro" , method="post">
+          {% csrf_token %}
+        <h1>Add a Dojo</h1>
+        <label>name:</label>
+        <input type="text" name="name" id="" /><br />
+        <label>city:</label>
+        <input type="text" name="city" id="" /><br />
+        <label for="">state:</label>
+        <input type="text" name="state" id="" /><br />
+        <button type="submit">add</button>
+      </form>
+      </div>
+
+      <div class="cards">
+        <form action="/ninjapro" , method="post">
+          {% csrf_token %}
+          <h1>Add a Ninja</h1>
+        <label>First Name:</label>
+        <input type="text" name="fname" id="" /><br />
+        <label>sec Name:</label>
+        <input type="text" name="secname" id="" /><br />
+        <label>Dojo:</label>
+        <select value="Select a Ninja" name="doojoo">
+          {% for i in data_dojo %}
+          <option value="{{i.id}}">{{i.name}}</option>
+          {% endfor %}
+        </select><br />
+        <button type="submit">add</button>
+      </form>
+      </div>
+    </div>
+    <hr>
+
+
+
+    <div class="result">
+      {% for i in data_dojo %}
+      <li>{{i.name}} </li>
+      <ul><li>{{i.city}} , {{i.state}}</li></ul>
+       <ul><ul>
+       {% for i in data_ninja %}
+          <li><em>{{i.fname}} , {{i.secname}}</em></li>
+        {% endfor %}
+      </ul></ul>
+    {% endfor %}
+
+    </div>
+  </body>
+</html>

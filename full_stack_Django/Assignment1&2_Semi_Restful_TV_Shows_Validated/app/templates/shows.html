@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Shows</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </link>
+</head>
+
+<body>
+    <a class="text-blue-500" href="">GO Back</a>
+    <h1 class="text-xl font-bold">All Shows</h1>
+    <table class="w-full border-collapse">
+        <tr>
+            <th class="border p-2">ID</th>
+            <th class="border p-2">title</th>
+            <th class="border p-2">Network</th>
+            <th class="border p-2">Release Data</th>
+            <th class="border p-2">Actions</th>
+        </tr>
+        {% for show in shows %}
+        <tr>
+            <td class="border p-2">{{show.id}}</td>
+            <td class="border p-2">{{show.title}}</td>
+            <td class="border p-2"> {{show.network}}</td>
+            <td class="border p-2">{{show.released_date}}</td>
+            <td><a href="shows/{{show.id}}" class="text-blue-500">Show</a> | <a class="text-blue-500"
+                    href="/shows/{{show.id}}/Edit">edit</a> | <a class="text-blue-500"
+                    href="shows/{{show.id}}/destroy">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="shows/new" class="text-blue-500">Add new Show</a>
+</body>
+
+</html>

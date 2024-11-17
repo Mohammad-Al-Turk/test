@@ -1,0 +1,86 @@
+1- >>> user1 = Users.objects.create(f_name='mo',l_name='turk',email='mo@gmail.com',age=24)
+>>> user2 = Users.objects.create(f_name='shatha',l_name='bast',email='shatha@gmail.com',age=25)
+>>> user3 = Users.objects.create(f_name='nasri',l_name='ladaa',email='nasri@gmail.com',age=26)
+
+
+2->>> Users.objects.all().values()
+<QuerySet [{'id': 1, 'f_name': 'mo', 'l_name': 'turk', 'email': 'mo@gmail.com', 'age': 24, 'created_at': datetime.datetime(2024, 11, 5, 21, 6, 21, 460573, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 6, 21, 460657, tzinfo=datetime.timezone.utc)},
+ {'id': 2, 'f_name': 'shatha', 'l_name': 'bast', 'email': 'shatha@gmail.com', 'age': 25, 'created_at': datetime.datetime(2024, 11, 5, 21, 7, 19, 301393, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 7, 19, 301434, tzinfo=datetime.timezone.utc)},
+ {'id': 3, 'f_name': 'nasri', 'l_name': 'ladaa', 'email': 'nasri@gmail.com', 'age': 26, 'created_at': datetime.datetime(2024, 11, 5, 21, 7, 56, 895494, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 7, 56, 895544, tzinfo=datetime.timezone.utc)}]>
+
+
+3->>> Users.objects.last()
+<Users: Users object (3)>
+>>> a=Users.objects.last()
+>>> print(a.f_name)
+nasri
+>>> print(a.l_name)
+ladaa
+>>>
+
+
+
+4->>> Users.objects.first()
+<Users: Users object (1)>
+>>> a=Users.objects.first()
+>>> print(a.f_name)
+mo
+>>> print(a.l_name)
+turk
+>>>
+
+
+
+5->>> a=Users.objects.last()
+>>> a.l_name = 'Pancakes'
+>>> print(a.f_name,a.l_name)
+nasri Pancakes
+>>> a.save()
+
+
+
+
+6->>> a=Users.objects.get(id=2)
+>>> a.delete()
+(1, {'app_1.Users': 1})
+>>> print(a)
+Users object (None)
+>>>
+
+
+
+
+
+7- >>> Users.objects.all().order_by('f_name').values()
+<QuerySet [{'id': 1, 'f_name': 'mo', 'l_name': 'turk', 'email': 'mo@gmail.com', 'age': 24, 'created_at': datetime.datetime(2024, 11, 5, 21, 6, 21, 460573, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 6, 21, 460657, tzinfo=datetime.timezone.utc)}, {'id': 3, 'f_name': 'nasri', 'l_name': 'Pancakes', 'email': 'nasri@gmail.com', 'age': 26, 'created_at': datetime.datetime(2024, 11, 5, 21, 7, 56, 895494, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 29, 9, 210826, tzinfo=datetime.timezone.utc)}]>
+>>>
+
+
+
+
+
+BONUS Query - >>> Users.objects.all().order_by('-f_name').values()
+<QuerySet [{'id': 3, 'f_name': 'nasri', 'l_name': 'Pancakes', 'email': 'nasri@gmail.com', 'age': 26, 'created_at': datetime.datetime(2024, 11, 5, 21, 7, 56, 895494, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 29, 9, 210826, tzinfo=datetime.timezone.utc)}, {'id': 1, 'f_name': 'mo', 'l_name': 'turk', 'email': 'mo@gmail.com', 'age': 24, 'created_at': datetime.datetime(2024, 11, 5, 21, 6, 21, 460573, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 11, 5, 21, 6, 21, 460657, tzinfo=datetime.timezone.utc)}]>
+>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

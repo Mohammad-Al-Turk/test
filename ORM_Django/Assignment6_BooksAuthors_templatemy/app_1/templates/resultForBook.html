@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+
+    <h1>Title: {{book.title}}</h1>
+    <h3>ID: {{book.id}}</h3>
+    <p>description: {{book.description}}</p>
+
+    <h3></h3>
+    
+    <select name="" id="">
+        'authoes':models.show_author_data()
+      {% for i in authoes %}
+        <option value="{{i.id}}">{{i.fname}}{{i.lname}}</option>
+        {% endfor %}
+        <button>Add</button>
+    </select>
+
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
+  </head>
+  <body>
+      {% csrf_token %}
+      <div class="container">
+      <form action="/">
+        {% csrf_token %}
+        <h1 style="margin: auto auto;">Counter</h1>
+        <h4 style="margin: auto auto;">{{x}} Times</h4>
+        </form>
+        <button  onclick="window.location='/destroy_session'">Go Back</button>
+         </div>
+
+    {% comment %} <img src="{% static 'images/image.jpg' %}" /> {% endcomment %}
+  </body>
+</html>

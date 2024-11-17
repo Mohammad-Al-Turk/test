@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>add new show</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </link>
+</head>
+
+<body class="bg-gray-100 p-4">
+  <h1>Add a new Show</h1>
+  <form action="/shows/create" method="post">
+    {% csrf_token %}
+    <div class="mb-4">
+      <label class="block text-gray-700" for="title">Title</label>
+      <input type="text" name="title" class="w-full p-2 border border-gray-300 rounded" id="title">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700" for="Network">Network</label>
+      <input type="text" name="network" class="w-full p-2 border border-gray-300 rounded" id="Network">
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="Released_Date">Released Date</label>
+      <input type="date" name="released_date" class="w-full p-2 border border-gray-300 rounded" id="Released_Date">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700" for="Description">Description:</label>
+      <textarea class="w-full p-2 border border-gray-300 rounded" name="description" id="Description"></textarea>
+    </div>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Create</button>
+  </form>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+
+</html>

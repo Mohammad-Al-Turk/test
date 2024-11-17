@@ -1,0 +1,26 @@
+.countainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputData{
+    background-color: rgb(232, 238, 238);
+    height: 300px;
+    text-align: center;
+    
+
+}
+
+
+button{
+    background-color: rgb(185, 236, 231);
+    box-shadow: 2px 2px 2px black;
+    width: 25%;
+    margin-top: 20px;
+}
+
+input{
+    width: 60%;
+    margin: 20px;
+}
+

@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.mainContainer{
+    background-color: rgb(252, 239, 225);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards{
+    background-color: rgb(172, 184, 184);
+    width: 20%;
+    height: 350px;
+    text-align: center;
+}
+
+input{
+    height: 28px;
+    width: 60%;
+    margin: 25px;
+}
+
+button{
+    background-color: aquamarine;
+    width: 100px;
+    height: 30px;
+    box-shadow: 2px 2px 2px black;
+}
+
+
+select{
+    margin: 0px 0px 20px 30px;
+    height: 7%;
+    width: 60%;
+    padding: 15px;
+}
+
+
+.result{
+    background-color: rgb(252, 239, 225);
+    text-align: center;
+    height: 1000px;
+    
+}
+
+
+

@@ -1,0 +1,80 @@
+1- >>> book1=Book.objects.create(title='c#',description='c#')
+ book2=Book.objects.create(title='java',description='java')
+>>> book3=Book.objects.create(title='python',description='python')
+>>> book4=Book.objects.create(title='php',description='php')
+>>> book5=Book.objects.create(title='ruby',description='ruby')
+>>> author1=Author.objects.create(fname='jane',lname='austen')
+>>> author2=Author.objects.create(fname='Dickinson',lname='Emily')
+>>> author3=Author.objects.create(fname='Fyodor'
+>>> author5=Author.objects.create(fname='Lau',lname='Tzu')
+
+
+
+2- >>> a=Book.objects.get(id=1)
+>>> a.title='c##'
+>>> a.save()
+>>>
+
+
+3->>> a=Author.objects.get(id=4)
+>>> a.fname='bill'
+>>> a.save()
+
+
+4->>> book1=Book.objects.create(title='c#',description='c#')
+>>> book2=Book.objects.create(title='java',description='java')
+>>> author1=Author.objects.create(fname='jane',lname='austen')
+>>> author1.books.add(book1,book2)
+
+
+
+
+
+5-
+>>> book2=Book.objects.get(id=2)
+>>> b1=Book.objects.get(id=1)
+>>> b3=Book.objects.get(id=3)
+>>> a2=Author.objects.get(id=2)
+>>> a2.books.add(b1,book2,b3)
+
+
+
+6- >>> a3=Author.objects.get(id=3)
+>>> b4=Book.objects.get(id=4)
+>>> a3.books.add(b1,book2,b3,b4)
+
+
+
+
+7->>> a4=Author.objects.get(id=4)
+>>> b4=Book.objects.get(id=5)
+>>> b5=Book.objects.get(id=5)
+>>> a4.books.add(b1,book2,b3,b4,b5)
+>>>
+
+
+8->>> b3.authors.all()
+<QuerySet [<Author: Author object (2)>, <Author: Author object (3)>, <Author: Author object (4)>]>
+
+
+9- b3.authors.remove(author1)
+
+
+10->>> a5=Author.objects.get(id=5)
+>>> b2=Book.objects.get(id=2)
+>>> a5.books.add(b2)
+>>>
+
+
+
+11->>>author = Author.objects.all()[2]
+>>>books = author.books.all()
+>>>books for book in books:
+   >>>books print(book.title)
+
+
+
+12->>>books book = Book.objects.all()[4]
+>>>books authors = book.authors.all()
+>>>books for author in authors:
+    >>>books print(f"{author.fname} {author.lname}")

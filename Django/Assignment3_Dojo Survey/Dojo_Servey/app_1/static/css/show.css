@@ -1,0 +1,18 @@
+.contanier{
+    width: 30%;
+    height: 450px;
+    background-color: rgb(191, 202, 202);
+    margin: 0 auto;
+}
+
+p{
+    font-size: 20px;
+    margin: 50px 50px 50px 50px;
+}
+
+button{
+    background-color: rgb(159, 159, 189);
+    box-shadow: 2px 2px 2px black;
+    margin-left: 50px;
+    
+}

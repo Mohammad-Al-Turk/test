@@ -1,0 +1,19 @@
+.container{
+    background-color: rgb(147, 152, 152);
+    width: 200px;
+    height: 200px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+button{
+    width: 50%;
+    height: 30px;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 2px black;
+    margin-left: 50px;
+}

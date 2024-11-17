@@ -1,0 +1,91 @@
+1 - >>> from app_1.models import *
+>>> Dojo.objects.create(name='mo',city='salfit',state='allah_a3lam')
+<Dojo: Dojo object (1)>
+>>> Dojo.objects.create(name='turk',city='salfit',state='allah_a3lam')
+<Dojo: Dojo object (2)>
+>>> Dojo.objects.create(name='nasri',city='ramallah',state='allah_a3lam')
+<Dojo: Dojo object (3)>
+
+
+
+2- >>> all=Dojo.objects.all()
+>>> all
+<QuerySet [<Dojo: Dojo object (1)>, <Dojo: Dojo object (2)>, <Dojo: Dojo object (3)>]>
+>>> all.delete()
+(3, {'app_1.Dojo': 3})
+>>> all
+<QuerySet []>
+>>>
+
+
+
+3- >>> Dojo.objects.create(name='shatha',city='nablus',state='allah_a3lam')
+<Dojo: Dojo object (4)>
+>>> Dojo.objects.create(name='ali',city='tolkrem',state='allah_a3lam')
+<Dojo: Dojo object (5)>
+>>> Dojo.objects.create(name='alii',city='jinen',state='allah_a3lam')
+<Dojo: Dojo object (6)>
+
+
+4+5+6 -
+
+>>> dojo4=Dojo.objects.get(id=4)
+>>> dojo5=Dojo.objects.get(id=5)
+>>> dojo6=Dojo.objects.get(id=6)
+>>> ninja1=Ninja.objects.create(fname='f_ninja1',lname='l_ninja1',dojo_f_id=dojo4)
+>>> ninja2=Ninja.objects.create(fname='f_ninja2',lname='l_ninja2',dojo_f_id=dojo4)
+>>> ninja3=Ninja.objects.create(fname='f_ninja3',lname='l_ninja3',dojo_f_id=dojo4)
+>>> ninja4=Ninja.objects.create(fname='2nd_f_ninja1',lname='2en_l_ninja1',dojo_f_id=dojo5)
+>>> ninja5=Ninja.objects.create(fname='2nd_f_ninja2',lname='2en_l_ninja2',dojo_f_id=dojo5)
+>>> ninja6=Ninja.objects.create(fname='2nd_f_ninja3',lname='2en_l_ninja3',dojo_f_id=dojo5)
+>>> ninja7=Ninja.objects.create(fname='3ed_f_ninja1',lname='3ed_l_ninja1',dojo_f_id=dojo6)
+>>> ninja8=Ninja.objects.create(fname='3ed_f_ninja2',lname='3ed_l_ninja2',dojo_f_id=dojo7)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'dojo7' is not defined. Did you mean: 'dojo4'?
+>>> ninja8=Ninja.objects.create(fname='3ed_f_ninja2',lname='3ed_l_ninja2',dojo_f_id=dojo6)
+>>> ninja9=Ninja.objects.create(fname='3ed_f_ninja3',lname='3ed_l_ninja3',dojo_f_id=dojo6)
+>>>
+
+
+
+7->>> a=Dojo.objects.get(id=4)
+>>> n=Ninja.objects.filter(dojo_f_id=a)
+>>> n
+<QuerySet [<Ninja: Ninja object (1)>, <Ninja: Ninja object (2)>, <Ninja: Ninja object (3)>]>
+
+
+
+8->>> a=Dojo.objects.last()
+>>> a
+<Dojo: Dojo object (6)>
+>>> n=Ninja.objects.filter(dojo_f_id=a)
+>>> n
+<QuerySet [<Ninja: Ninja object (7)>, <Ninja: Ninja object (8)>, <Ninja: Ninja object (9)>]>
+>>>
+
+
+
+9->>> a=Ninja.objects.last()
+>>> a.Dojo
+
+
+10-
+(ormenv) C:\Users\Mohammad\Desktop\axsos\python\ORM\Assignment3_dojo_and_ninja_Shell>python manage.py makemigrations
+Migrations for 'app_1':
+  app_1\migrations\0003_dojo_desc.py
+    + Add field desc to dojo
+
+(ormenv) C:\Users\Mohammad\Desktop\axsos\python\ORM\Assignment3_dojo_and_ninja_Shell>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, app_1, auth, contenttypes, sessions
+Running migrations:
+  Applying app_1.0003_dojo_desc... OK
+
+
+11->>> Dojo.objects.create(name='mooo',city='tw',state='un',desc='hi')
+<Dojo: Dojo object (7)>
+>>>
+
+
+
